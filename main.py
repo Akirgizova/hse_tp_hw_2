@@ -16,31 +16,31 @@ class Tests():
 
         st = time.time()
         print('---test1-----')
-        if self.check_test(self.start_test('test1.txt'), (95, -344, 52, 11331274492116074496000)): print('OK')
+        if self.check_test(self.start_test('tests/test1.txt'), (95, -344, 52, 11331274492116074496000)): print('OK')
         else: print('WA')
         print(time.time() - st)
 
         st = time.time()
         print('---test2-----')
-        if self.check_test(self.start_test('test2.txt'), (911, -344, 1079, -1951771397316665103692857344000)): print('OK')
+        if self.check_test(self.start_test('tests/test2.txt'), (911, -344, 1079, -1951771397316665103692857344000)): print('OK')
         else: print('WA')
         print(time.time() - st)
 
         st = time.time()
         print('---test3-----')
-        if self.check_test(self.start_test('test3.txt'), (59, -43, 57, -649472)): print('OK')
+        if self.check_test(self.start_test('tests/test3.txt'), (59, -43, 57, -649472)): print('OK')
         else: print('WA')
         print(time.time() - st)
 
         st = time.time()
         print('---test4-----')
-        if self.check_test(self.start_test('test4.txt'), (14, 1, 92, 6706022400)): print('OK')
+        if self.check_test(self.start_test('tests/test4.txt'), (14, 1, 92, 6706022400)): print('OK')
         else: print('WA')
         print(time.time() - st)
 
         st = time.time()
         print('---Custom test4-----')
-        if self.custom_check(self.start_test('test4.txt')): print('OK')
+        if self.custom_check(self.start_test('tests/test4.txt')): print('OK')
         else: print('WA')
         print(time.time() - st)
 
