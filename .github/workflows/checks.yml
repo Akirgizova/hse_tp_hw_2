@@ -1,0 +1,43 @@
+name: Code checks
+
+on: [push, workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+      # - name: "Edit config"
+      # run: git config --global user.email "test@tes.test" && git config --global user.name "test"
+
+      - name: "Install deps"
+        run: |
+          python -m pip install --upgrade pip
+
+      # - name: "Version patch"
+      #   run: npm version 0.1.$GITHUB_RUN_ID
+
+      - name: "Telegram Notification"
+        uses: "appleboy/telegram-action@master"
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          args: все ок
+          # args: New 0.1.${{ github.run_id }} version publish
+
+      # - name: Run program
+      #   run : python -c 'write_uncomplished()'
+
+      # - name: Read file with numbers of unc test
+      #   id: read_file
+      #   uses: andstor/file-reader-action@v1
+      #   with:
+      #     path: "uncomplished_test.txt"
+
+      # - name: File content
+      #   run: echo "${ steps.read_file.outputs.contents }"

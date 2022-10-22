@@ -1,0 +1,5 @@
+#Ignore ide folders
+.vscode/
+
+#Ignore uncomplished file with number of uncomplised test
+uncomplished_tests.txt
